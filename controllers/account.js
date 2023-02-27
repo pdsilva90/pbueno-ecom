@@ -25,13 +25,12 @@ function update(req, res) {
 }
 
 function deleteOne(req, res) {
-  Product.findById(req.user.id)
-  .then(product => {
-    product.cart.remove(req.params.id)
-    product.save(()=>{
-      res.redirect('/orders/account')
-    })
-  })
+  Product.findOneAndDelete(
+    // Ensue that the book was created by the logged in user
+    {_id: req.params.id, userRecommending: req.user._id}, function(err) {
+      res.redirect('/account');
+    }
+  );
 }
 
 function addItem(req, res) {
@@ -39,8 +38,7 @@ function addItem(req, res) {
   // Assign the logged in user's id
   product.userRecommending = req.user._id;
   product.save(function(err) {
-    if (err) return return res.redirect('/order/account');
-    // Probably want to go to newly added book's show view
+    if (err) return res.redirect('/order/account');
     res.redirect(/orders/account);
   });
 }
