@@ -1,0 +1,39 @@
+<%- include('../partials/header') %>
+
+<div id="all-products">
+    <img id='Img' src='/images/mens.jpeg'>
+    <form action='/products/addToCart' method='POST'>
+      <input type='hidden' name="item" value='Shirt'>
+      <input type='hidden' name="price" value='$10'>
+      <input type='hidden' name="size" value='M'>
+      <input type='hidden' name="quantity" value='1'>
+      <p id='detail'>Name: Adidas Shirt<br>Style: Mens<br>Price: $25</p>
+      <input type='submit' value='Add To Cart'>
+    </form>
+  </div>
+  <div>
+    <img id='Img' src='/images/kids.jpeg'>
+    <form action='/products/addToCart' method='POST'>
+      <input type='hidden' name="item" value='Tracksuit'>
+      <input type='hidden' name="price" value='$50'>
+      <input type='hidden' name="size" value='M'>
+      <input type='hidden' name="quantity" value='1'>
+      <p id='detail'>Name: Adidas Tracksuit<br>Style: Kids<br>Price: $50</p>
+      <input type='submit' value='Add To Cart'>
+    </form>
+  </div>
+  <div>
+    <img id='Img' src='/images/womens.webp'>
+    <form action='/products/addToCart' method='POST'>
+      <input type='hidden' name="item" value='Shirt'>
+      <input type='hidden' name="price" value='$15'>
+      <input type='hidden' name="size" value='M'>
+      <input type='hidden' name="quantity" value='1'>
+      <p id='detail'>Name: Adidas Shirt <br>Style: Womens<br>Price: $25</p>
+      <input type='submit' value='Add To Cart'>
+    </form>
+  </div>
+
+
+
+<%- include('../partials/footer') %>

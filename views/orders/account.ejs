@@ -1,0 +1,95 @@
+<%- include('../partials/header') %>
+
+<div id="acount-page">
+  <section id="section-top">
+    <form id="add-item" method="POST" action="/">
+        <label>Product name:</label>
+        <textarea name="title"></textarea>
+        <label>Product department:</label>
+        <select name="department">
+            <option value="Mens">Mens</option>
+            <option value="Womens">Womens</option>
+            <option value="Kids">Kids</option>
+        </select>
+        <label>Description:</label>
+        <textarea name="description"></textarea>
+        <label>Size:</label>
+        <select name="size">
+            <option value="XS">XS</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L" selected>L</option>
+            <option value="XL">XL</option>
+        </select>
+        <label>Price:</label>
+        <textarea name="price"></textarea>
+        <label>Qty:</label>
+        <textarea name="qty"></textarea>
+        <label>Image URL:</label>
+        <textarea name="itemImg"></textarea>
+        <input type="submit" value="Add Item">
+    </form>
+  </section>
+
+  <section id="section-middle">
+    <h1>
+      <%= product.title %>
+    </h1>
+    <div class="image">
+      <img src="<%= product.itemImg %>" alt="<%= product.title %>">
+    </div>
+    <h2>$<%= (product.price).toLocaleString('en-US') %>
+    </h2>
+    <p class="product-detail-description">
+      <%= product.description %>
+    </p>
+</section>
+
+  <section id="section-bottom">
+  <% if (orders.length <= 0) { %>
+    <h1>No orders found</h1>
+    <% } else { %>
+      <ul class="orders">
+        <% orders.forEach(order => { %>
+          <li class="orders__prooduct">
+            <h1>Order No. <%= order._id %> - <%= order.date %> </h1>
+            <ul class="orders__products">
+              <% order.products.forEach(p => { %>
+                <li class="orders__products-item"><%= p.product.title %> (<%= p.quantity %>)</li>
+                <% }); %>
+              </ul>
+            </li>
+            <% }); %>
+          </ul>
+          <% } %>
+          
+  </section>
+</div>    
+          <!-- <table id="items-list">
+            <thead>
+              <tr>
+            <th>Item Name</th>
+            <th>Item department:</th>
+            <th>Size:</th>
+            <th>Price:</th>
+            <th>Qty:</th>
+            <th>Brand:</th>
+            <th>Description</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% item.forEach(function(i) { %>
+            <tr>
+              <td><%= i.itemName %></td>
+              <td><%= i.itemDepartment %></td>
+              <td><a href="/update/<%= i._id %>">UPDATE</a></td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table> -->
+
+
+
+
+<%- include('./partials/header') %>

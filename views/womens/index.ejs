@@ -1,0 +1,58 @@
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Mint Boutique</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    
+
+  <nav>
+    <!-- <img src="/images/camera.svg"> -->
+    <a href="/" <%- title === 'Home' ? 'class="active"' : '' %>>Home</a>
+    <a href="/womens">Womens</a>
+    <a href="/mens">Mens</a>
+    <a href="/kids">Kids</a>
+    <a href="/products">All Products</a>
+    <% if (user) { %>
+        <a id='cart' href='/carts'> View Cart </a><br>
+        <a href="/logout">LOG OUT</a>
+        <a id="my-account" href="/users"> My Account</a><br>
+    <% } else { %>
+      <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
+    <% } %>
+  </nav>
+
+  <main>
+
+<h2>Women's Clothing</h2>
+
+<div>
+    <img id='Img' src='/images/womens.webp'>
+    <form action='/products/addToCart' method='POST'>
+      <input type='hidden' name="item" value='Shirt'>
+      <input type='hidden' name="price" value='$15'>
+      <input type='hidden' name="size" value='M'>
+      <input type='hidden' name="quantity" value='1'>
+      <p id='detail'>Name: Adidas Shirt <br>Style: Womens<br>Price: $25</p>
+      <input type='submit' value='Add To Cart'>
+    </form>
+  </div>
+
+
+
+
+
+</body>
+</html>
+
+<footer id='footer-index'>
+    <a id='back' href='/'> Back to Home </a>
+    <a href = "mailto: pdsilva90@gmail.com">Contact Us</a>
+
+</footer>
+

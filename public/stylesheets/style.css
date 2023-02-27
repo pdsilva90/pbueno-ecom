@@ -1,8 +1,91 @@
-body {
+/* body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: grid;
+  /* font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; */
+/* } */ 
+body {
+  padding: 30px;
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas: 
+    "nav"
+    "main"
 }
 
-a {
-  color: #00B7FF;
+h1,h2 {
+  margin: 50px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+nav {
+  background-color: #A5FFD6;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 10vmin;
+  
+}
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+}
+
+.login img {
+  height: 30px;
+}
+
+
+div {
+
+  /* grid-template-columns: auto;
+  grid-gap: 1rem;  */
+  display: grid;
+  margin: 2%;
+  height: 30vh;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+ 
+#categories-top{
+  grid-template-columns: 5fr 5fr;
+  justify-content: center;
+  text-align: center;
+}
+ 
+#categories-bottom{
+  grid-template-columns: 5fr 5fr;
+  justify-content: center;
+  text-align: center;
+}
+
+
+
+#footer-index {
+  justify-content: space-between;
+  background-color:#A5FFD6;
+  text-align: center;
+  /* height: 100%; */
+}
+
+button, a {
+  /* height: 100%; */
+  width: 100px;
+  border-radius: 10px;
+  text-decoration: underline;
+  font-size: 20px;
+  color: black;
+  text-align: center;
+}
+
+button:hover, a:hover, #login:hover, #logout:hover {
+  background: #A5FFD6;
+  color: white;
+  border-radius: 10px;
 }

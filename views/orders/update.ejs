@@ -1,0 +1,22 @@
+<%- include('../partials/header') %>
+
+<ul id='update-item'>
+  <% user.product.forEach(function(product) { %>
+  <li>
+    <%= product.quantity %>
+    <%- product.item %>
+    <%= product.price %>
+    <form action='/cart/delete/<%= product._id %>?_method=DELETE' method='POST'>
+      <input type='submit' value='Delete'>
+    </form>
+    <form action="/cart/edit/<%= product._id %>?_method=PUT" method="POST" autocomplete="off">
+      <input name='quantity' type='text'>
+      <input type="submit" value="Edit Quantity">
+    </form>
+    <% }); %>
+  </li>
+</ul>
+
+
+
+<%- include('../partials/footer') %>
