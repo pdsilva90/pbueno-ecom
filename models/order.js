@@ -26,7 +26,7 @@ const orderSchema = new Schema({
   purchased: {
     type: Boolean,
     default: false
-  }, 
+  }}, {
     timestamps: true,
   
 });
