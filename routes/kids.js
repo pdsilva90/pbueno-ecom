@@ -6,4 +6,8 @@ const kidsCtrl = require('../controllers/kids');
 /* GET home page. */
 router.get('/', kidsCtrl.index);
 
+router.get('/:id', kidsCtrl.show);
+
+
+
 module.exports = router;

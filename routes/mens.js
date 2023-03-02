@@ -6,4 +6,8 @@ const mensCtrl = require('../controllers/mens');
 /* GET home page. */
 router.get('/', mensCtrl.index);
 
+
+
+
+
 module.exports = router;

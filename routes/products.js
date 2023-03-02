@@ -6,10 +6,12 @@ const product = require('../models/product');
 /* GET users listing. */
 router.get('/', productsCtrl.index);
 
-router.get('/:id', productsCtrl.addItem);
+router.post('/', productsCtrl.addToCart);
 
-router.get('/products', productsCtrl.show);
+// router.get('/:id', productsCtrl.show);
 
+// router.get('/products', productsCtrl.show);
+// router.get('/orders', productsCtrl.placeOrder);
 
 
 module.exports = router;

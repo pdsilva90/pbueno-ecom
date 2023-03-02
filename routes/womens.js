@@ -8,4 +8,5 @@ router.get('/', womensCtrl.index);
 
 router.get('/:id', womensCtrl.show);
 
+
 module.exports = router;

@@ -16,22 +16,18 @@ var productSchema = new Schema({
       type: String,
       required: true,
     },
+    quantity: {
+      type: Number,
+      default: 1,
+    },
     price: {
       type: Number,
       min: 5,
-      max: 150
-    },
-    quantity: {
-      type: Number,
-      default: 1
+      max: 150,
+      required: true,
     },
     imageUrl: {
       type: String,
-      required: true,
-    },
-    userId: {
-      type: Schema.Types.ObjectId,
-      ref: 'User',
       required: true,
     },
   });

@@ -1,8 +1,38 @@
 <%- include('../partials/header') %>
 
-<body id='products-home-page'>
+<h2>All Products</h2>
+  <ul>
+   
+     <% for(let product of products) { %>
+      <li> 
+      <%= product.name %> 
+      <%= product.department %> 
+      <%= product.description %> 
+      <%= product.price %> 
+      <td class="product-image"><img src="<%= product.imageUrl %>"></td><br>
+      <form action='/cart' method='POST'>
+        <input type='hidden' name="productId" value='<%= product._id %>'>
+        <input type='submit' value='Add To Cart'>
+      </form>
+      <% } %> 
+    </li>
+</ul>
 
 
+
+
+
+
+
+
+
+
+
+
+
+<!-- <body id='products-home-page'> -->
+
+<!-- 
   <div id='categories-top'>
     <div id='womens'>
       <a id='womens' href='/womens'>Women's </a>
@@ -20,7 +50,7 @@
     <div id='products'>
       <a id='allProducts' href='/products/show'>All Products</a>
     </div>
-  </div>
+  </div> -->
 
 
 

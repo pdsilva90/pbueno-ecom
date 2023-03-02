@@ -6,6 +6,7 @@ var logger = require('morgan');
 var session = require('express-session');
 const passport = require('passport');
 const methodOverride = require('method-override');
+const bodyParser = require('body-parser');
 
 require('dotenv').config();
 require('./config/database');
@@ -17,7 +18,6 @@ var womensRouter = require('./routes/womens');
 var mensRouter = require('./routes/mens');
 var cartRouter = require('./routes/cart');
 var kidsRouter = require('./routes/kids');
-var accountRouter = require('./routes/account');
 
 
 var app = express();
@@ -39,6 +39,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.use(bodyParser.json());
 
 app.use(function (req, res, next) {
   res.locals.user = req.user;
@@ -51,12 +55,12 @@ app.use('/womens', womensRouter);
 app.use('/mens', mensRouter);
 app.use('/cart', cartRouter);
 app.use('/kids', kidsRouter);
-app.use('/orders/account', accountRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
+
 
 // error handler
 app.use(function(err, req, res, next) {

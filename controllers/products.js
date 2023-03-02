@@ -3,39 +3,23 @@ const cart = require('../models/user');
 
 module.exports = {
   index,
-  show,
-  addItem,
+  addToCart,
+
 };
+
 
 function index(req, res) {
   Product.find({}, function(err, products) {
-    console.log(products)
-    res.render('products/show', { title: 'All Products', products});
+    res.render('products/index', { title: 'All Products', products});
   })
 }
-
-function show(req, res, next) {
-  Product.findById(req.params.id, function (err, product) {
-    if (err) return res. redirect('/');
-    res.render('products/show', {title: 'Products'});
-  });
+function addToCart(req, res) {
+  const loggedInUser = req.user
+  loggedInUser.cart.push(req.params.id);
+  loggedInUser.save();
+  // res.redirect('/cart')
+  res.send('this is the addToCart method');
 }
 
-function addItem( req, res) {
-  const product = new Product(req.body);
-    product.save(function(err) {
-      if (err) {
-        console.log(err);
-        return res.redirect('/');
-      };
-      console.log(product);
-      res.redirect('/');
-    });
-  }
 
-// function show(req, res) {
-//   Product.findById(req.params.id, function(err, product) {
-//     res.render('/products/show', {title: 'Products'});
-//   });
-// }
 

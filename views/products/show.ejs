@@ -1,38 +1,63 @@
 <%- include('../partials/header') %>
 
-<div id="all-products">
-    <img id='Img' src='/images/mens.jpeg'>
-    <form action='/products/addToCart' method='POST'>
-      <input type='hidden' name="item" value='Shirt'>
-      <input type='hidden' name="price" value='$10'>
-      <input type='hidden' name="size" value='M'>
-      <input type='hidden' name="quantity" value='1'>
-      <p id='detail'>Name: Adidas Shirt<br>Style: Mens<br>Price: $25</p>
-      <input type='submit' value='Add To Cart'>
-    </form>
-  </div>
-  <div>
-    <img id='Img' src='/images/kids.jpeg'>
-    <form action='/products/addToCart' method='POST'>
-      <input type='hidden' name="item" value='Tracksuit'>
-      <input type='hidden' name="price" value='$50'>
-      <input type='hidden' name="size" value='M'>
-      <input type='hidden' name="quantity" value='1'>
-      <p id='detail'>Name: Adidas Tracksuit<br>Style: Kids<br>Price: $50</p>
-      <input type='submit' value='Add To Cart'>
-    </form>
-  </div>
-  <div>
-    <img id='Img' src='/images/womens.webp'>
-    <form action='/products/addToCart' method='POST'>
-      <input type='hidden' name="item" value='Shirt'>
-      <input type='hidden' name="price" value='$15'>
-      <input type='hidden' name="size" value='M'>
-      <input type='hidden' name="quantity" value='1'>
-      <p id='detail'>Name: Adidas Shirt <br>Style: Womens<br>Price: $25</p>
-      <input type='submit' value='Add To Cart'>
-    </form>
-  </div>
+<h2>All Products</h2>
+
+
+
+<!-- <h3> product.name </h3>
+<ul>
+  <li> Name: $<%= product.name %>
+      Department: <%product.department%>
+  </li>
+</ul> -->
+
+<!-- description:
+price:
+imageUrl: -->
+
+
+<!-- <div>
+  <img id='Img' src=''>
+  <form action='/cart' method='POST'>
+    <input type='hidden' name="product" value='Shirt'>
+    <input type='hidden' name="price" value='$15'>
+    <input type='hidden' name="size" value='M'>
+    <input type='hidden' name="quantity" value='1'>
+    <p id='detail'>Name: Adidas Shirt <br>Style: Womens<br>Price: $25</p>
+    <input type='submit' value='Add To Cart'>
+  </form>
+</div> -->
+
+
+
+<!-- <table id="product-list">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name:</th>
+        <th>Department:</th>
+        <th>Description:</th>
+        <th>Price:</th>
+        <th>ImageURl:</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><%= user.cart.name %></td>
+          <td>$<%= user.cart.department %></td>
+          <td><%= user.cart.description %></td>
+          <td><%= user.cart.price %></td>
+          <td><%= user.cart.ImageUrl %></td>
+        </tr>
+    </tbody>
+</table>
+<% if (user) { %>
+  <form action="/cart" method="POST">
+    <button type="submit">Add to Cart</button>
+  </form>
+<% } %> -->
+
+
 
 
 
