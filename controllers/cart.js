@@ -1,5 +1,6 @@
 const User = require('../models/user');
 const Product = require('../models/product');
+const Order = require('../models/order');
 const { findById } = require('../models/user');
 const { findOne } = require('../models/product');
 
@@ -8,7 +9,8 @@ const { findOne } = require('../models/product');
 module.exports = {
   addToCart,
   showCart, 
-  delete: deleteItem
+  delete: deleteItem,
+  placeOrder
 };
 
 // function addToCart(req, res) {
@@ -25,32 +27,52 @@ function showCart(req, res) {
   for(let i = 0; i < cart.length; i ++) {
     
   }
-  console.log(req.user);
     res.render('cart/index', {title: 'Cart', loggedInUser})
   }
 
-  function addToCart (req, res) { 
+function addToCart (req, res) { 
     loggedInUser = req.user
     let id = req.body.productId;
     Product.findById(id, function(err, product) { 
     loggedInUser.cart.push(product);
     loggedInUser.save();
-    console.log(product)
   });
-  res.render('cart/index', {loggedInUser})
+  res.render('cart/index', { title: 'Cart', loggedInUser})
 }
 
 function deleteItem(req, res, next) {
   loggedInUser = req.user
     for(let i = 0; i < loggedInUser.cart.length; i++) {
       if(loggedInUser.cart[i]._id == req.params.id) {
-      console.log(req.user.cart[i]);
-      req.user.cart.splice(i, 1);
-      req.user.save();
-    }
-  }
-    res.redirect('/cart', { title: `Cart`});
+      console.log(loggedInUser.cart[i]);
+      loggedInUser.cart.splice(i, 1);
+      loggedInUser.save();
+    };
+  };
+    res.redirect('/cart', 302, { title: 'Cart', loggedInUser});
 }
+
+function placeOrder (req, res ) {
+  loggedInUser = req.user
+  const order = new Order({
+    date: order.date,
+    user: order.customer,
+    purchased: order.purchased,
+  });
+  order.save(function(err, order){
+    res.send('Order Successful!')
+    res.redirect('/', {loggedInUser})
+  })
+}
+
+
+
+
+
+
+
+
+
 //req.user represents the user currently logged in-req.params.id ref product id in cart
 
 

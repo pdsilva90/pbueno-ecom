@@ -8,7 +8,7 @@
       <%= product.name %> 
       <%= product.department %> 
       <%= product.description %> 
-      <%= product.price %> 
+      $<%= product.price %> 
       <td class="product-image"><img src="<%= product.imageUrl %>"></td><br>
       <form action='/cart' method='POST'>
         <input type='hidden' name="productId" value='<%= product._id %>'>
