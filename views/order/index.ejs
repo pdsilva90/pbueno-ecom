@@ -1,3 +1,6 @@
+<H2>Order Details</H2>
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -6,8 +9,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
-<body>
-    <nav>
+  <body>
+    
+
+  <nav>
     <a href="/" <%- title === 'Home' ? 'class="active"' : '' %>>Home</a>
     <a href="/womens">Womens</a>
     <a href="/mens">Mens</a>
@@ -17,35 +22,35 @@
     <% if (user) { %>
         
         <a href="/logout">LOG OUT</a>
+        <!-- <a id="my-account" href="/account">My Account</a><br> -->
     <% } else { %>
       <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
     <% } %>
-    </nav>
-<main>
-  <h2>Cart</h2>
-    <div id="cart-page">
-      <ul id="cart-contents">
-          <% user.cart.forEach(function(p) {  %>
-            <li>
-              <img class="cartImg" src="<%= p.imageUrl %>"></img>
-                <%= p.name %>
-                $<%= p.price %>
-                <form action="/cart/<%= p._id %>?_method=DELETE" method="POST">
-                  <button type="submit" id="remove-item">Remove item</button>
-                </form>
-          <% }); %> 
-            </li>
-            <form action='/order' method='POST' id="place-order">
-              <input type='hidden' name="" value='<%= %>'>
-              <button id="place-order" type='submit' value='place-order'>Place Order</button>
-            </form>
-    </div>
-     
+  </nav>
+    <h3>Order Details</h3>
+        <div id="order-details">
+            <ul> 
+                <li>     
+            <% orders.forEach(function(order) {  %>
+
+                Order #: <%= order._id %> <br> 
+                Products: <%= order.products[0].name %> <br> 
+                Customer Name:<%= order.customer.name %> <br>
+            
+                </li>
+            <% }); %>
+      
+            </ul>
+        </div>
+
+
+
+
 </body>
 </html>
-    
+
 <footer id='footer-index'>
-        <a id='back' href='/'> Back to Home </a>
-        <a href = "mailto: pdsilva90@gmail.com">Contact Us</a>
-    
+    <a id='back' href='/'> Back to Home </a>
+    <a href = "mailto: pdsilva90@gmail.com">Contact Us</a>
+
 </footer>

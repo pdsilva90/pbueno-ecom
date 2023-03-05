@@ -10,7 +10,7 @@ module.exports = {
   addToCart,
   showCart, 
   delete: deleteItem,
-  placeOrder
+  // createOrder
 };
 
 // function addToCart(req, res) {
@@ -30,13 +30,12 @@ function showCart(req, res) {
     res.render('cart/index', {title: 'Cart', loggedInUser})
   }
 
-function addToCart (req, res) { 
-    loggedInUser = req.user
+async function addToCart (req, res) { 
+    const loggedInUser = req.user
     let id = req.body.productId;
-    Product.findById(id, function(err, product) { 
+    const product = await Product.findById(id)
     loggedInUser.cart.push(product);
-    loggedInUser.save();
-  });
+   await loggedInUser.save();
   res.render('cart/index', { title: 'Cart', loggedInUser})
 }
 
@@ -44,7 +43,6 @@ function deleteItem(req, res, next) {
   loggedInUser = req.user
     for(let i = 0; i < loggedInUser.cart.length; i++) {
       if(loggedInUser.cart[i]._id == req.params.id) {
-      console.log(loggedInUser.cart[i]);
       loggedInUser.cart.splice(i, 1);
       loggedInUser.save();
     };
@@ -52,18 +50,33 @@ function deleteItem(req, res, next) {
     res.redirect('/cart', 302, { title: 'Cart', loggedInUser});
 }
 
-function placeOrder (req, res ) {
-  loggedInUser = req.user
-  const order = new Order({
-    date: order.date,
-    user: order.customer,
-    purchased: order.purchased,
-  });
-  order.save(function(err, order){
-    res.send('Order Successful!')
-    res.redirect('/', {loggedInUser})
-  })
-}
+// function createOrder (req, res ) {
+// //  const loggedInUser = req.user
+// //  Order.create(loggedInUser.cart)
+//  res.redirect('/cart/new', { title: 'Order Details', loggedInUser });
+// //  if(loggedInUser.cart !== '') {
+//   // const order = new Order({
+//   //     date: order.date,
+//   //     user: order.customer,
+//   //     purchased: order.purchased,
+//   // });
+//   // order.save(function(err, order){
+//     // res.redirect('/cart/new', 302, { title: 'Order Details', loggedInUser});
+//     // })
+//   // };
+// }
+  // res.redirect('/cart/new', 302, { title: 'Cart', loggedInUser});
+ 
+  // const order = new Order({
+  //   date: order.date,
+  //   user: order.customer,
+  //   purchased: order.purchased,
+  // });
+  // order.save(function(err, order){
+  //   // res.send('Order Successful!')
+  //   res.redirect('/cart/new', { title: 'Order Details', loggedInUser})
+  // })
+// }
 
 
 

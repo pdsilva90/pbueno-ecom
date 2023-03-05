@@ -1,18 +1,18 @@
 <%- include('../partials/header') %>
 
 <h2>All Products</h2>
-  <ul>
+  <ul id="all-products">
    
      <% for(let product of products) { %>
       <li> 
-      <%= product.name %> 
-      <%= product.department %> 
-      <%= product.description %> 
-      $<%= product.price %> 
+     <strong> <%= product.name %> </strong><br>
+      <%= product.department %> <br>
+      <%= product.description %> <br>
+      $<%= product.price %> <br>
       <td class="product-image"><img src="<%= product.imageUrl %>"></td><br>
-      <form action='/cart' method='POST'>
+      <form action='/cart' method='POST' id="add-to-cart">
         <input type='hidden' name="productId" value='<%= product._id %>'>
-        <input type='submit' value='Add To Cart'>
+        <button id="add-to-cart" type='submit' value='Add To Cart'>Add To Cart</button>
       </form>
       <% } %> 
     </li>
