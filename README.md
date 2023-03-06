@@ -7,12 +7,22 @@ Online Shopping Website
 You're able to browse through all pages depending on what category you are shopping for. As a user, you are able to add items to your cart, delete them from your cart, view your cart, and create an order with the items in your cart.
 
 ______________
+# Features:
+Sign in: 
+* User is able to sign in with their google account
+Navigation Bar:
+* Links to all pages on every page for easy navigation throughout the website
+Categories:
+* With seperated categories, you can easily find what you are looking for by selecting a specific category
+Order history:
+* User can see all orders attached to their login
+______________
 
 ## Link to deployed site: https://murmuring-spire-04751.herokuapp.com/
 
 ______________
 
-## USER STORIES
+## USER STORIES:
 
 AS A VISITOR:
 
@@ -38,21 +48,28 @@ I want to be able to log out.
 
 ______________
 ## Trello board link: https://trello.com/invite/b/eCfqCLD1/ATTIe22edae870b7e61e685e5fcb22f0262d0A369D7E/project-2
+<img width="1402" alt="Screenshot 2023-03-05 at 8 52 31 PM" src="https://user-images.githubusercontent.com/111029621/223187717-3d28bdd4-c2ab-4b06-9594-be6809ea82f7.png">
+
 ______________
 
-## PICTURES OF WEBSITE
-<img width="2047" alt="Screenshot 2023-03-06 at 12 06 27 AM" src="https://user-images.githubusercontent.com/111029621/223031867-5f771fd5-186d-4e5e-8bab-d58411591415.png">
+## PICTURES OF WEBSITE:
+<img width="2042" alt="Screenshot 2023-03-06 at 10 53 45 AM" src="https://user-images.githubusercontent.com/111029621/223177850-d71a737e-dada-4871-8178-3560b6c1ff8d.png">
 
-<img width="2047" alt="Screenshot 2023-03-06 at 12 07 26 AM" src="https://user-images.githubusercontent.com/111029621/223031887-93347ef5-6534-4e1a-8b27-4c481c0cb3e3.png">
+<img width="2040" alt="Screenshot 2023-03-06 at 11 15 49 AM" src="https://user-images.githubusercontent.com/111029621/223182897-3291a407-39a7-49a1-ae68-83931975369a.png">
 
+<img width="2043" alt="Screenshot 2023-03-06 at 10 54 33 AM" src="https://user-images.githubusercontent.com/111029621/223177902-e471ea0f-23e2-4ea4-a34d-b34bc30208ff.png">
 
 
 ______________
 ## Technologies used:
 
-HTML, CSS, BOOTSTRAP, JAVASCRIPT, MongoDB, Express, Passport, Node.js, Google OAuth
+HTML, CSS, BOOTSTRAP, JAVASCRIPT, MongoDB, Express, Passport, NodeJS, Google OAuth
 
 _______________
 ## NEXT STEPS: 
-I would like to add functionality of stripe or another payment option like paypal so that this website will be fully functional. I would also like to add the ability to search and add more categories per department. I would like to create a myaccount page where the user can update their information, see all orders, and change password.  I may even look into an API.
+* Add functionality of stripe or another payment option like paypal so that this website is fully functional. 
+* Search feature to allow user to find specific products.
+* More subcategories per department. 
+* Create a my account page where the user can update their information, see all orders, and change password. 
+* A better contact us page and subscribe feature.
 
