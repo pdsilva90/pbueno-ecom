@@ -1,20 +1,15 @@
 <%- include('../partials/header') %>
 
-
-
-
 <h2>Women's Clothing</h2>
-
-
-<div>
-  <img id='Img' src='/<images/womens.webp>'>
+<div id="womens-page">
+  <img id='Img' src='https://www.pngitem.com/pimgs/m/9-94487_adidas-logo-back-tee-adidas-shirt-transparent-background.png'>
   <form action='/cart' method='POST'>
     <input type='hidden' name="product" value='Shirt'>
-    <input type='hidden' name="price" value='$15'>
+    <input type='hidden' name="price" value='$50'>
     <input type='hidden' name="size" value='M'>
     <input type='hidden' name="quantity" value='1'>
     <p id='detail'>Name: Adidas Shirt <br>Style: Womens<br>Price: $25</p>
-    <input type='submit' value='Add To Cart'>
+    <input type='submit' value='Add To Cart' id="womens-atc">
   </form>
 </div>
 
