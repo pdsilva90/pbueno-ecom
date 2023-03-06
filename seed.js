@@ -10,9 +10,9 @@ const Product = require('./models/product');
 
   
   const product = [
-    { name: 'Adidas Shirt', department: 'Mens', description: 'short sleeve', price: '50', imageUrl: 'https://icon2.cleanpng.com/20180603/gki/kisspng-t-shirt-adidas-originals-trefoil-adidas-t-shirt-5b14b4e5c012d2.5175365015280836857867.jpg' },
+    { name: 'Adidas Shirt', department: 'Mens', description: 'short sleeve', price: '50', imageUrl: 'https://i.ebayimg.com/images/g/c1IAAOSwoRRfIG9c/s-l500.jpg' },
     { name: 'Adidas Tracksuit', department: 'Kids', description: 'toddle tracksuit', price: '50', imageUrl: 'https://i.pinimg.com/564x/a5/61/a6/a561a6acd2c40705de9b9cc9f07e801d.jpg' },
-    { name: 'Adidas Shirt', department: 'Womens', description: 'short sleeve', price: '50', imageUrl: 'https://www.pngitem.com/pimgs/m/9-94487_adidas-logo-back-tee-adidas-shirt-transparent-background.png' },
+    { name: 'Adidas Shirt', department: 'Womens', description: 'short sleeve', price: '50', imageUrl: 'https://m.media-amazon.com/images/I/51f-uFXxlWS._AC_SX522_.jpg' },
   ];
   
   // Seed the data

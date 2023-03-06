@@ -34,7 +34,8 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 34px;
+  height: 30px;
+  font-size: 18px;
 }
 
 .login img {
