@@ -1,8 +1,9 @@
 ### The Mint Boutique 
-## Online Shopping Website
+
+Online Shopping Website
 
 
-## This is a full-stack web app following full RESTful routing and giving the user access to full CRUD functionality.
+# This is a full-stack web app following full RESTful routing and giving the user access to full CRUD functionality.
 You're able to browse through all pages depending on what category you are shopping for. As a user, you are able to add items to your cart, delete them from your cart, view your cart, and create an order with the items in your cart.
 
 ______________
@@ -13,18 +14,26 @@ ______________
 
 ## USER STORIES
 
-# AS A VISITOR:
+AS A VISITOR:
 
 I want to view all products/categories.
+
 I want to be able to shop by category.
+
 I want to be able to create a login as a first time visitor.
 
-# AS A USER: 
+AS A USER: 
+
 I want to be able to login with Google.
+
 I want to be able to add items to my cart by clicking the 'Add To cart' button.
+
 I want to be able to delete an item from my cart.
+
 I want to be able to place an order.
+
 I want to view all orders placed.
+
 I want to be able to log out. 
 
 ______________
